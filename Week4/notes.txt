@@ -1,0 +1,28 @@
+Algorithm covered
+
+1) std::count_if() : count instnaces matching condition
+
+2) std::find_if() : find the position of the first instnace that satisfies the condition
+
+3) std::all_of() : return true if all the instnces match consition,false otherwise
+
+4) std::any_of : retun true if any one of the instnaces, match condition, false otherwise
+
+5) std::none_of : return true only when NONE of the instances match condition, false otherwise
+
+6) std::copy : copy all the elements from source and destination (Size is mandatory to give in copy)
+
+7) std::copy_if : copy elements that satisfies condition from source to destination 
+                Note: remeber to set size, copy_if and then resizing using distance.
+
+8) std::accumulator : aggregate multiple elements into 1 by performing a progressive, binary operation of your choice
+
+9) std::max_element : find the position of the first max element [based on comparator]
+
+10) std::min_element : find the position of the first min element [based on comparator]
+
+11) std::distance : find the size by using begin and last position iterator.
+
+12) std::for_each
+
+13) std::transform

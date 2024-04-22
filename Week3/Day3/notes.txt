@@ -1,0 +1,119 @@
+-> Command Line CLI
+-> Git Version Control
+-> Makefiles and CMake
+-> Great Understanding of OOP!
+
+Books to Complete : -
+
+- Effective Modern CPP !
+- C++ The Complete Reference ! 
+
+
+/*
+Threads
+    1) std::thread :    They can be used for parallel/ concurrent tasks.
+                        They need to be joined or detached.
+                        They do not catch the return values.
+
+    2) Condition variables :    In situations where one thread has to wait for an
+                                event to happen because of some other thread before completing
+                                due to other operations , such threads may do some work
+                                before the event, hence are launched simultaneously.
+
+    3) Container of threads :   To manage multiple instances of threads efficiently
+                                (map to functions, joine etc.)
+
+    4) std::mutex v/s std::lock_guard/std::unique::lock
+        - std::mutex : can be locked and unlocked manually ONLY!
+        - std::lock_gurad : (Mutex who completed masters!) Scope based mutex/RAII following
+                            mutex. NO MANUAL LOCK/UNLOCK.
+        -std::unique_lock : scope based as well as manual lock/unlock.
+                            (Supports many features at OS level).
+
+                (Synchronization primitives) ---------->more such mutexes and all 
+
+    5) Real-life
+        -Customer -> Mercedes : Navigation/Music
+
+        ------>Unlock the doors ------------>start electronics 
+                -------------->Map thread ----> Load Surrounding data/favourites/emergency alerts 
+                                          ----> [INPUT : Destination]
+            
+        -------->
+
+                -------------->Music thread
+
+*/
+
+// I want to launch that performs task A and task B
+// task A does not depend on input parameter. but task B needs an input.
+// WE NEED TO LAUNCH THREAD THAT WANTS A PARAMERTER EVEN WITHOUT THE PARAMETER.
+
+
+// std::future and std::async and std::promise
+
+
+
+
+
+1) std::thread
+	- one thread
+	- container of threads
+	- std::mutex for race condition
+	- std::lock_guard to manage mutex based on scope
+2) if initializer
+
+3) std::optional
+
+4) structured binding
+
+5) std::variants
+	- functional polymorphism
+	- std::visit,std::holds_alternatives
+
+6) std::condition_variable
+	- unique_lock,notify mechanism
+
+7) std::async
+	- with future_input
+	- without future input
+
+8) Fold expressions
+
+9) Variadic templates
+
+
+
+
+
+
+
+std::future<int> ans=std::async([&](){
+    try{
+        return TotalHorsePower(data);
+    }
+    catch(EmpptyContainerException &ex){
+        sdt::error_code ec=std::make_error(std::future_errc::broken_promise);
+
+        std::future_error MyError(ec,ex.what());
+        throw MyError;
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

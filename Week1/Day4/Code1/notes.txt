@@ -1,0 +1,30 @@
+ptr[0x100H]
+    0x11H
+
+name =ptr
+content=0x100H
+size=8;
+address=0x11H
+
+
+
+RAII -> Resource Aqusition is Initialisation
+
+
+
+
+
+
+
+
+A basic layout of a smart pointer
+                                                                HEAP
+[   STACK MEMORY                                                0x100H
+    mptr                                                        [101        | Harshit       | 800000.0f]
+    [       0x100H          ]
+    ....
+    ....
+    ....
+    ....
+]
+<----------Shared Pointer ------------>

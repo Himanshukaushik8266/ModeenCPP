@@ -1,0 +1,81 @@
+seguay : A smooth transition 
+
+[101 | "Rohan" | 87000.0f | "Developer"]
+[204 | "Ajay" | 7000.0f | "Tester"]
+[809 | "Harshit" | 77000.0f | "Trainer"]
+
+****************************************************************************************
+
+Option 1 : Store objects in fixed sized conatiner with contiguous storage
+Benefits :  1) Random access
+            2) Easy to find next and previous
+            3) No tension of resize or change in length
+Answer : Array data Structure
+CPP implementation :: std::array<T,size_t>;
+
+Note: 
+    1) An array of size n when declared,immediately reserves space for n items
+    this means, n default construction will happen at the time of declaration.
+
+****************************************************************************************
+
+Option 2 : Store objects in a dynamically resizable container which can be
+            used like an array with reservation for elements or by pushing when required
+            and resizing if necessary
+
+Answer : Vector arrangement
+CPP implementation :: std::vector<T,////(allocator)////>
+
+Benefits: 
+1) You can resize the container during runtime of the program
+2) You can access elements via index randomly!
+
+Note: 
+    1)  If you add elements beyond capacity, vector has to readjust.
+        Sometimes vector cannot expand adjacent to its boundary.
+        In such cases, a complete shift of data happens.
+
+****************************************************************************************
+
+Option 3 : I would like to store data ANYWHERE IN RAM AS LONG AS I CAN FETCH IT WHEN I WANT IT.
+            Data items should be "linked" with each other.
+
+Answer : linked list
+CPP implementation: std::forward_list : (singly linked list)
+                    std::list : (doubly linked list)
+
+****************************************************************************************
+
+Option 4 : Hashing
+ 
+[101 | "Rohan" | 87000.0f | "Developer"]
+[102 | "Ajay" | 7000.0f | "Tester"]
+[809 | "Harshit" | 77000.0f | "Trainer"]
+ 
+TAG:                            Value 
+809:                [809 | "Harshit" | 77000.0f | "Trainer"]
+ 
+//fix a mathametical way of finding where to put data [which row?]
+// we can use the same mathemetical formula to determine 
+// where my data is when I need to read it later!
+ 
+//formula [HASH function] modulus 9
+a) 101%9 = 2//row2, result of modulas 9 is the hash value/ it helps you to choose the row number
+b) 102%9 = 3 //row 3
+ 
+// 9 items
+ 
+Key       VALUE
+[   ]  [           ]                                row[0]
+[   ]  [           ]                                row[1]
+[101]  [101 | "Rohan" | 87000.0f | "Developer"]     row[2]
+[102]  [102 | "Ajay" | 7000.0f | "Tester"]          row[3]
+[   ]  [           ]                                row[4]
+[   ]  [           ]                                row[5]
+[   ]  [           ]                                row[6]
+[   ]  [           ]                                row[7]
+[   ]  [           ]                                row[8]
+ 
+//infinite data in future 
+//find the salary of the employee whose employee ID is 102
+102%9 = 3 means data is on the row[3] TC reduced to o(n) to o(1)

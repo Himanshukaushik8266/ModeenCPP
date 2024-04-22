@@ -1,0 +1,34 @@
+Abstraction:
+    Not providing the implemetation details so that 
+        a) It can be provided at a later point in the code hierarchy
+        b) We can explain functionality without significant focus on implemetation details 
+Inheritance:
+    Either you specialise the implementation for a specific sub category 
+                     OR 
+    You develop a logic which can be generalised to many types.
+
+Polymorphism:
+    If there a multiple ways to solve a problem according to context.
+
+
+
+
+
+
+    const :
+        Rule 1:  Const is applied to the token on its immediate left if there is nothing to the left of const apply const on the token to its right;
+        Rule 2:  Pointer symbol * is considered as separate token.
+
+
+
+
+
+Part 1 : Essentials of Modern CPP
+        -CPP but modern
+
+Part 2 : Functional Programming in Modern CPP
+        -Lambda Function and all
+
+Part 3 : Concurrency in Modern CPP and CPP 17
+
+Part 4 : STL ULTRA PRO MAX

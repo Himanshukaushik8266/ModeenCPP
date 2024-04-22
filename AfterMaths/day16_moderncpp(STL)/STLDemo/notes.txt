@@ -1,0 +1,7 @@
+employee
+str id
+str name
+float sal
+int age
+str location
+

@@ -1,0 +1,85 @@
+1) What are we doing? 
+    -> We are trying to do more work in our program per second.
+        Want more efficiency in my program using using hardware more efficiently.
+2) How?
+    -> By using the OS for support. We are requesting OS to run independent sections of my program parallely if possible
+        or concurrently if nothing else works out!.
+
+3) Syntax wise what to do ?
+    -> Each of your independent functions can be treated "logical threads". They can be scheduled by OS if you create a thread
+        object and attach it to one callable with right parameters
+
+    -> Also remember to wait for threads to finish
+            OR
+        Detach From Spawned threads
+
+4) Why did you join ?
+    ->  Because main thread cannot finish before other threads as Spawned threads need to report back to main via signals.
+        If main is already finished, then thread has to become daemon(thread running in the background).
+
+5) What is std::thread?
+    -> It is a class which is a wrapper around a native platform specific OS-level thread.
+
+6) Can we copy threads?
+    -> No, Once a mini program is started, copying it would mean duplicating and doing the same thing again!
+
+7) Can we make a container of threasd?
+    -> yes we can since thread instances are objects.
+
+8) What is a race condition?
+    -> Two or more threads are fighting TO PERFORM A WRITE OPERATION ON SHARED MEMORY.
+
+9) What is a critical section?
+    -> A part of the program where race condition can happen to cause data integrity issue, incoherent output, or worse!
+
+10) How to avoid race condition ?
+    -> TAke actions to synchronize threads ESPECIALLY FOR CRITICAL SECTIONS.
+
+11) Syntactically how to do this ?
+    ->  Choose between the plethora (too many) of available choices for synchronization primitived
+    
+    -> Mutex: binary Semaphore
+    -> lock_guard : which is a scope based lock that use RAII
+    -> unique_lock : It can be locked/unlocked manually as well with RAII rules.
+    -> recursive_lock : If you want to use recursssion and thread 
+                    [What THE HELL ARE YOU DOING THIS FOR?]
+
+    -> condition variable : To implememt synchronization based on PRODUCER/CONSUMER model.
+
+12) How will I know which one to use ?
+    -> COMMON SENSE.
+
+13) How will I learn all this ?
+    -> THAT'S WHERE HARSHIT COMES INTO THE PICTURE!
+    -> ALSO  CPPCON AND CONCURRENCY IN ACTION books are great resources!
+
+14) All this sounds like OS level stuff, Why am I learning this?
+    -> Because all system  level programmer must use the hardware efficiently
+
+
+15) What is this sychronous and asynchronous stuff?
+    -> If you start command/ instruction N ONLY AFTER COMMAND/INSTRUCTION N-1 IS FULLY COMPLETED, execution is synchronous
+            
+        else    
+       
+    -> Asynchronous
+
+
+16) Is async the same async I have learnt in jaascript/and/or other languages?
+    -YES,OF COURSE
+
+17) What if I don't understand all this before the marathon ?   
+    -> TCS is still hiring
+
+
+
+
+try{
+
+    mt.lock();
+    amount=-10;
+    PerformActionAfterModification();
+    mt.unlock();
+}catch(std::runtime_error &ex){
+    std::cout<<ex.what()<<std::endl;
+}

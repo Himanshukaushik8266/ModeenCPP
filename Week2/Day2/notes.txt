@@ -1,0 +1,47 @@
+void Adaptor(LOGIC)
+
+
+1) app start----------------------> APP ID has to be carried into the second function
+
+2) network setup------------------> we get ip address and ort mumber, has to be created in third function
+
+3) using network config, setup data transfer to a database.
+    connection will be established
+        -----------------> we get a databse connection cursor object. take this to fun 4
+
+4) using the database access pointer, write data into database
+        -----------------> use cursor to execute write query
+
+
+void maagic(){
+    int n1=10,n2=20;
+    
+    
+    example 1 : All data values from "enclosing function" are accessible inside f1
+    auto f1=[&](){return n1+n2;};
+
+    example 2 : Selected data values capture by copy 
+    auto f1=[n1,n2](){retrun n1+n2;};
+
+    example 3 : Selected data values capture by reference 
+    auto f1=[&n1,&n2](){retrun n1+n2;};
+
+    example 4 : All data values capture by copy 
+    auto f1=[=](){retrun n1+n2;};
+
+    example 4 : Some by copy some by reference  
+    auto f1=[n1,&n2](){retrun n1+n2;};
+
+}
+
+
+void trick(){
+    int n1=100;
+    auto f1=[=] () mutable {n1=99;}; // by default all the variable captured by copy are const hence non-modifyable 
+    marking it mutable local copy can only be changed
+
+    std::cout<<n1<<"\n";
+    here ouput is 100 because this n1 is originally in the scope of trick but the n1 that we have modified is local copy for
+    the lambda function
+
+}

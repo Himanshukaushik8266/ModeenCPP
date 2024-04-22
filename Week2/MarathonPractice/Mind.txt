@@ -1,0 +1,23 @@
+Header Guard
+class in h and cpp
+if comes composition use shared pointer
+if comes aggregation use refernce wrapper 
+
+use of const , explicit and overrride keyword is mandatory
+
+in functionalities use proper comment before witing the logic.
+
+
+in inheritance there must be a question of dynamic casting if there is a pure virtual function
+
+in that case use virtual destructor just to make sure that your destructor of parent class must called
+
+
+make sure to clear memory and handle the segmentation fault iussure if using pointer
+
+
+if possible avoid the use of pointer 
+
+
+
+Don't forget nothing is bigger than your understanding of problem .

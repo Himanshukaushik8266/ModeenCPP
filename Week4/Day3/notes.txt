@@ -1,0 +1,42 @@
+Time Complexities :-
+
+for(int i=0;i<row;i++){
+    for(j=0;j<columns;j++){
+        std::cout<<i*j<<std::endl;
+    }
+}
+-------------------------------------------> O(row*columns)
+
+//Linear Search
+
+operation : Access item and compare!
+N : size of elements to be checked
+
+Time Complexity : O(N);
+
+-> Time Complexity is not measured in UNIT OF TIME !
+-> Time Complexity is always concerned about "How many operations" per input elements !
+
+step 1: Always find relation between N(number of input items) and operation where "operation" is context specific
+
+e.g. In linear search, operation is "access elements and compare".
+    In binary search, check middle, id found, okay, else divide.
+
+
+
+// Bubble Sort : 
+21      15     27     19     21
+
+
+N + (N-1) + (N-2) + (N-3)....................+ 1
+
+N(N+1)/2
+
+
+ 2
+N + N
+------
+  2 
+
+
+  
